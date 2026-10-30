@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 
 // ─── Parallax wrapper ─────────────────────────────────────────────────────────
 export const Px = ({ speed = 10, className = "", style = {}, children }) => (
@@ -355,7 +356,12 @@ export function CollectionSlide({ vertical = false }) {
         <p className={`${body} font-bold mt-4`}>Some have travelled across generations.</p>
         <p className={`${body} mt-1`}>Some have witnessed changing homes and disappearing traditions.</p>
         <p className={`${body} mt-1`}>Some were forgotten. Until they were found again.</p>
-        <div className="mt-4"><CTA>Explore the Collection</CTA></div>
+        <div className="mt-4">
+          <Link href="/shop-heritage" className={`${eyebrow} flex items-center gap-2 hover:opacity-70 transition-opacity duration-300`}>
+            <span>Explore the Collection</span>
+            <Arrow />
+          </Link>
+        </div>
 
         {/* images */}
         <div className="relative flex-1 mt-4 min-h-[200px]">
@@ -382,7 +388,10 @@ export function CollectionSlide({ vertical = false }) {
         <p className={body}>Some were forgotten. Until they were found again.</p>
       </Px>
       <Px speed={6} className="hidden lg:block absolute left-[30.3%] top-[35%] z-10">
-        <CTA column>Explore the Collection</CTA>
+        <Link href="/shop-heritage" className={`${eyebrow} flex flex-col items-start gap-1 hover:opacity-70 transition-opacity duration-300`}>
+          <span>Explore the Collection</span>
+          <Arrow />
+        </Link>
       </Px>
       <Px speed={0} className="hidden lg:block absolute bottom-0 left-0 w-[34.5%]">
         <img src="/images/collection-left.png" alt="Collection objects" className="h-auto w-full object-contain" />

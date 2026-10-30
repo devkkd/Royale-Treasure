@@ -5,16 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const leftLinks = [
-  { label: "The Story",      href: "#story" },
-  { label: "The Collection", href: "/collection" },
-  { label: "The Spaces",     href: "#spaces" },
-  { label: "What We Do",     href: "#what-we-do" },
+  { label: "The Story",      href: "#story",      slide: 2.3 },  // StorySlide = slide index 1 (100vh)
+  { label: "The Collection", href: "#collection", slide: 3.2 },
+  { label: "The Spaces",     href: "#spaces",     slide: 4.2 },  // SpacesSlide = slide index 4 (400vh)
+  { label: "What We Do",     href: "#what-we-do", slide: null },
 ];
 
 const rightLinks = [
-  { label: "Shop Heritage", href: "/shop-heritage" },
-  { label: "The Legacy",    href: "/legacy" },
-  { label: "Visit",         href: "#visit" },
+  { label: "Shop Heritage", href: "/shop-heritage", slide: null },
+  { label: "The Legacy",    href: "/legacy",         slide: null },
+  { label: "Visit",         href: "/contact-us",     slide: null },
 ];
 
 const allLinks = [...leftLinks, ...rightLinks];
@@ -47,6 +47,41 @@ export default function Header() {
 
   const close = () => setOpen(false);
 
+  // Slide navigation — scrolls to the correct slide in HorizontalScroller
+  // Each slide = 100vh of vertical scroll
+  const handleNav = (e, item) => {
+    close();
+
+    if (item.slide !== null && item.slide !== undefined) {
+      e.preventDefault();
+      // If not on home page, go home first then scroll
+      if (window.location.pathname !== "/") {
+        window.location.href = `/?slide=${item.slide}`;
+        return;
+      }
+      const targetY = item.slide * window.innerHeight;
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+      return;
+    }
+
+    // For section anchors on home page (#what-we-do)
+    if (item.href.startsWith("#")) {
+      e.preventDefault();
+      if (window.location.pathname !== "/") {
+        window.location.href = `/${item.href}`;
+        return;
+      }
+      // Scroll past all slides first, then find the section
+      const slidesHeight = 5 * window.innerHeight;
+      const section = document.querySelector(item.href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.scrollTo({ top: slidesHeight, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       {/* ── Header ── */}
@@ -62,7 +97,7 @@ export default function Header() {
           {/* Left nav (desktop) */}
           <nav className="hidden items-center gap-6 lg:flex xl:gap-7">
             {leftLinks.map((item) => (
-              <Link key={item.label} href={item.href} className={linkClass}>
+              <Link key={item.label} href={item.href} onClick={(e) => handleNav(e, item)} className={linkClass}>
                 {item.label}
               </Link>
             ))}
@@ -86,7 +121,7 @@ export default function Header() {
           {/* Right nav (desktop) */}
           <div className="hidden items-center justify-end gap-6 lg:flex xl:gap-8">
             {rightLinks.map((item) => (
-              <Link key={item.label} href={item.href} className={linkClass}>
+              <Link key={item.label} href={item.href} onClick={(e) => handleNav(e, item)} className={linkClass}>
                 {item.label}
               </Link>
             ))}
@@ -164,7 +199,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  onClick={close}
+                  onClick={(e) => handleNav(e, item)}
                   className="block py-4 font-['Times_New_Roman'] text-[15px] uppercase tracking-[0.1em] text-[#2b2b2b] hover:text-[#651A1A] transition-colors duration-200"
                 >
                   {item.label}
