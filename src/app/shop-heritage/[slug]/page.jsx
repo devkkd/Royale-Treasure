@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const p = getProduct(slug);
-  return p ? { title: `${p.title} | Royal Treasure`, description: p.tagline } : {};
+  return p ? { title: `${p.title} | Royale Treasure`, description: p.tagline } : {};
 }
 
 export default async function Page({ params }) {

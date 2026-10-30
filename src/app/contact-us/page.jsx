@@ -128,7 +128,7 @@ export default function ContactPage() {
 
           {/* Main showroom */}
           <Row label="Main Showroom" className="mt-4 lg:mt-[1.4vw]">
-            <p className={`${T} text-[clamp(14px,1.65vw,26px)] font-bold leading-[1.4] ${MAROON}`}>Royal Treasures</p>
+            <p className={`${T} text-[clamp(14px,1.65vw,26px)] font-bold leading-[1.4] ${MAROON}`}>Royale Treasures</p>
             <p className={`${note} mt-2 lg:mt-[1vw]`}>
               <Lines
                 lines={[
@@ -189,7 +189,7 @@ export default function ContactPage() {
         <Reveal delay={150}>
           <div className="relative aspect-[357/383] w-full overflow-hidden bg-[#ece8e1] max-lg:aspect-[4/3]">
             <iframe
-              title="Royal Treasure – 5 Jacob Road, Civil Lines, Jaipur"
+              title="Royale Treasure – 5 Jacob Road, Civil Lines, Jaipur"
               src={MAP_SRC}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

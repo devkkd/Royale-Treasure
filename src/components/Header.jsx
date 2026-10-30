@@ -110,7 +110,7 @@ export default function Header() {
           >
             <Image
               src="/logo.png"
-              alt="Royal Treasure"
+              alt="Royale Treasure"
               width={160}
               height={130}
               priority
@@ -173,7 +173,7 @@ export default function Header() {
         {/* Top: logo + close */}
         <div className="flex items-center justify-between px-6 py-3 border-b border-[#2b2b2b]/10">
           <Link href="/" onClick={close}>
-            <Image src="/logo.png" alt="Royal Treasure" width={72} height={60} className="h-auto w-[72px]" />
+            <Image src="/logo.png" alt="Royale Treasure" width={72} height={60} className="h-auto w-[72px]" />
           </Link>
           <button
             type="button"

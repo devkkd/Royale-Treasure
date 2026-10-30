@@ -183,7 +183,7 @@ export function StorySlide({ vertical = false }) {
         <h2 className={`${h2} ${MAROON} mt-2`}>
           Every Story<br /><span className={ORANGE}>Begins Somewhere</span>
         </h2>
-        <p className={`${body} font-bold mt-4`}>Royal Treasure began with more than a collection of objects</p>
+        <p className={`${body} font-bold mt-4`}>Royale Treasure began with more than a collection of objects</p>
         <p className={`${body} mt-2`}>
           It began with curiosity - for forgotten spaces, extraordinary craftsmanship, and stories waiting to be remembered.
         </p>

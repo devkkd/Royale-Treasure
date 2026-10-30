@@ -5,11 +5,11 @@ const testimonials = [
     lines: ["Duke Rajeshwar Singh", "Jodhpur, Rajasthan"],
   },
   {
-    text: "This year the art installations depict poetry in the woods – signifying the celebration of art and literature, while the wall arts showcase ideas being transformed into art. Royal Treasure understands the soul of this festival.",
+    text: "This year the art installations depict poetry in the woods – signifying the celebration of art and literature, while the wall arts showcase ideas being transformed into art. Royale Treasure understands the soul of this festival.",
     lines: ["Padmini Kumari, Patrika Plus", "Jaipur Literature Festival"],
   },
   {
-    text: "Royal Treasure somehow managed to create a backdrop befitting enough to match the height and glory of the occasion. The grand palatial door with Shiva was magnificent – an unforgettable evening.",
+    text: "Royale Treasure somehow managed to create a backdrop befitting enough to match the height and glory of the occasion. The grand palatial door with Shiva was magnificent – an unforgettable evening.",
     lines: ["Session Organiser, JLF", "Amitabh Bachchan Session,", "Diggi Palace"],
   },
   {

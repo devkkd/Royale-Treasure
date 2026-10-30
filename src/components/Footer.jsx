@@ -51,7 +51,7 @@ const trusted = [
   "Jaipur Literature Festival",
   "Jaigarh Heritage Festival",
   "Vedanta",
-  "Royal Fables",
+  "Royale Fables",
   "Fairmont Jaipur",
   "Chokhi Dhani",
   "Kingdom of Dreams",

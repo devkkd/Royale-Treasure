@@ -125,7 +125,7 @@ export default function WhatWeDo() {
             lines={[
               <>
                 From historic spaces and heritage properties to rare artefacts and bespoke interiors,{" "}
-                <strong>Royal Treasure</strong> combines
+                <strong>Royale Treasure</strong> combines
               </>,
               "craftsmanship, restoration, and design to preserve stories and create spaces that last.",
             ]}

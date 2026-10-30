@@ -114,7 +114,7 @@ export default function LegacyPage() {
           <p className={`${T} text-[clamp(10px,1.18vw,18px)] leading-[1.65] text-[#2b2b2b] lg:whitespace-nowrap`}>
             <Lines
               lines={[
-                "Royal Treasure is built on a deep appreciation for history, craftsmanship, and the extraordinary objects that carry stories across generations.",
+                "Royale Treasure is built on a deep appreciation for history, craftsmanship, and the extraordinary objects that carry stories across generations.",
                 "For us, heritage is not something to simply preserve behind glass. It is something to understand, restore, and thoughtfully bring into the present.",
               ]}
             />
@@ -147,7 +147,7 @@ export default function LegacyPage() {
           <p className={`${bodyL} mt-4 lg:mt-[2.5vw] lg:whitespace-nowrap`}>
             <Lines
               lines={[
-                "Royal Treasure was founded with a vision to protect the beauty of traditional",
+                "Royale Treasure was founded with a vision to protect the beauty of traditional",
                 "craftsmanship while giving heritage a meaningful place in contemporary spaces.",
               ]}
             />
@@ -281,7 +281,7 @@ export default function LegacyPage() {
             <Lines
               lines={[
                 "Rajasthan has always been a living archive of architecture, art, and extraordinary craftsmanship.",
-                "Its forts, palaces, havelis, artisans, and traditions continue to inspire everything we do at Royal",
+                "Its forts, palaces, havelis, artisans, and traditions continue to inspire everything we do at Royale",
                 "Treasure.",
                 "Our roots give us a deep understanding of heritage not simply as history, but as a living cultural",
                 "language that continues to evolve.",

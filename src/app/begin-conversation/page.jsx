@@ -569,7 +569,7 @@ export default function BeginConversationPage() {
 
     // ── Build WhatsApp message ──
     const lines = [
-      `*New Enquiry – Royal Treasure*`,
+      `*New Enquiry – Royale Treasure*`,
       ``,
       `*Name:* ${form.name.trim()}`,
       `*Email:* ${form.email.trim()}`,
