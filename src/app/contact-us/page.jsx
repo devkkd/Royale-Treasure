@@ -92,7 +92,7 @@ const note = `${sans} text-[clamp(10px,1.04vw,15px)] leading-[1.5] ${RED}`;
 export default function ContactPage() {
   return (
     // pt = room for your fixed header (the Figma crop started below it) — tweak if needed
-    <main className="relative w-full overflow-hidden pb-16 pt-20 lg:pb-[8vw] ">
+    <main className="relative w-full overflow-hidden pb-16 pt-20 lg:pb-[8vw] lg:pt-[13vw] ">
       {/* ───────────── Intro ───────────── */}
       <section className="px-6 text-center">
         <Reveal>

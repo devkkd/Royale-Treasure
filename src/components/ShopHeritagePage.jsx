@@ -24,7 +24,7 @@ const Lines = ({ lines }) =>
 export default function ShopHeritagePage() {
   return (
     // pt = room for your fixed header (the Figma crop started below it) — tweak if needed
-    <main className="relative w-full overflow-hidden pb-16 pt-18 lg:pb-[8vw] ">
+    <main className="relative w-full overflow-hidden pb-16 pt-18 lg:pb-[8vw] lg:pt-[13vw]">
       {/* ───────────── Intro ───────────── */}
       <section className="px-6 text-center">
         <Reveal>

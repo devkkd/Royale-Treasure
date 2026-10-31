@@ -1,13 +1,17 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+// Home page: solid bg after slide 5 starts (400vh)
+const SLIDE5_VH = 400;
 
 const leftLinks = [
-  { label: "The Story",      href: "#story",      slide: 2.3 },  // StorySlide = slide index 1 (100vh)
-  { label: "The Collection", href: "#collection", slide: 3.2 },
-  { label: "The Spaces",     href: "#spaces",     slide: 4.2 },  // SpacesSlide = slide index 4 (400vh)
+  { label: "The Story",      href: "#story",      slide: 2 },  // StorySlide = slide index 1 (100vh)
+  { label: "The Collection", href: "#collection", slide: 3 },
+  { label: "The Spaces",     href: "#spaces",     slide: 4 },  // SpacesSlide = slide index 4 (400vh)
   { label: "What We Do",     href: "#what-we-do", slide: null },
 ];
 
@@ -23,27 +27,25 @@ const linkClass =
   "font-['Times_New_Roman'] text-[14px] font-normal not-italic leading-[160%] tracking-[0%] uppercase text-[#2b2b2b] transition-colors hover:text-[#651A1A]";
 
 export default function Header() {
-  const [open, setOpen]       = useState(false);
-  const [visible, setVisible] = useState(true);
-  const lastScrollY            = useRef(0);
+  const [open, setOpen]         = useState(false);
+  const [solidBg, setSolidBg]   = useState(false);
+  const pathname                 = usePathname();
+  const isHome                   = pathname === "/";
 
-  // Hide on scroll down, show on scroll up
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      if (y < 10) {
-        setVisible(true);
-      } else if (y < lastScrollY.current - 4) {
-        setVisible(true);
-      } else if (y > lastScrollY.current + 4) {
-        setVisible(false);
-        setOpen(false);
+      if (isHome) {
+        // Home: solid after slide 5 starts (400vh)
+        setSolidBg(window.scrollY > SLIDE5_VH / 100 * window.innerHeight);
+      } else {
+        // Other pages: solid after just 10px scroll
+        setSolidBg(window.scrollY > 10);
       }
-      lastScrollY.current = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   const close = () => setOpen(false);
 
@@ -85,13 +87,11 @@ export default function Header() {
   return (
     <>
       {/* ── Header ── */}
-      <header
-        className={`
-         top-0 left-0 right-0 z-50 w-full
-          transition-transform duration-300 ease-in-out
-          // ${visible ? "translate-y-0" : "-translate-y-full"}
-        `}
-      >
+      <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-in-out ${
+          solidBg
+            ? "bg-[#f2ede8] border-b border-[#2b2b2b]/15 shadow-sm"
+            : "bg-transparent border-b border-transparent"
+        }`}>
         <div className="mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-6 py-2 lg:px-8">
 
           {/* Left nav (desktop) */}

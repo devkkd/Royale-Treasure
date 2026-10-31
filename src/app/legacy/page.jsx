@@ -96,7 +96,7 @@ const expertise = [
 export default function LegacyPage() {
   return (
     // pt = space for your fixed header (the Figma crop started below it) — tweak if needed
-    <main className="relative w-full overflow-hidden pt-6">
+    <main className="relative w-full overflow-hidden pt-6 lg:pt-[13vw]">
       {/* ───────────────── BLOCK 1 : intro + founder + expertise heading ───────────────── */}
       <section className="relative flex flex-col gap-8 px-6 pb-10 max-lg:items-center max-lg:text-center lg:block lg:h-[89vw] lg:px-0 lg:pb-0">
         {/* title */}

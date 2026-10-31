@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Fragment, useState } from "react";
 
 const T      = "font-['Times_New_Roman']";
@@ -179,12 +180,13 @@ export default function WhatWeDo() {
           From heritage properties and interiors to antiques and artistic installations, we transform stories into
           timeless experiences.
         </p>
-
+        <Link href="begin-conversation">
         <button
           className={`${T} mt-6 md:mt-[2vw] flex h-[44px] md:h-[clamp(34px,3.4vw,52px)] w-[180px] md:w-[clamp(140px,13.8vw,210px)] items-center justify-center bg-[#651A1A] text-[12px] md:text-[clamp(8px,0.85vw,13px)] font-bold uppercase tracking-[0.02em] text-white transition-opacity duration-300 hover:opacity-85`}
         >
           Begin Conversation
         </button>
+        </Link>
       </div>
     </section>
   );
